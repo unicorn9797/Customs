@@ -1,0 +1,64 @@
+CREATE DATABASE  IF NOT EXISTS `customs` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `customs`;
+-- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
+--
+-- Host: localhost    Database: customs
+-- ------------------------------------------------------
+-- Server version	8.0.43
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `declaration`
+--
+
+DROP TABLE IF EXISTS `declaration`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `declaration` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `declarationId` varchar(45) DEFAULT NULL,
+  `declarationDate` datetime DEFAULT NULL,
+  `declarationType` varchar(45) DEFAULT NULL,
+  `importerName` varchar(45) DEFAULT NULL,
+  `importerId` varchar(45) DEFAULT NULL,
+  `exporterName` varchar(45) DEFAULT NULL,
+  `exporterId` varchar(45) DEFAULT NULL,
+  `transportMode` varchar(45) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `digitalSignature` varchar(2048) DEFAULT NULL,
+  `publicKey` varchar(2048) DEFAULT NULL,
+  `taxFound` double DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `declaration`
+--
+
+LOCK TABLES `declaration` WRITE;
+/*!40000 ALTER TABLE `declaration` DISABLE KEYS */;
+INSERT INTO `declaration` VALUES (14,'DEC20250825-002','2025-08-25 06:11:42','進口','我是進口人',NULL,'我是出口人',NULL,NULL,'已簽署','jS4qjh/t9i5zYAbJ76Otb/BklepE+VeAulOd41bg8en10xfqwJTujR/h5l2LC/wvN3JYnWvsdePs4qWIblfKqAYM8GFccS/EbvqFxL+fV9eRI9LvsKI1G7syPX4Hh4xfmMiA3QcZIirruONLSQzpsrcmilIG1Ww7zxc0ayY0Sw69sOoCPsJtPZzHp2AYIsaoLmxxDhvWjsEFZuhFUrEXN9P4SPgqDPx+mr6GjjFzXQDR42tnPWPMGdBUNAkq+4dr8zlwI0qojk+VyCTVcDcBn/jGGdjMqmRrtLzgt+13TmxYXb/FRanRkt7MKCHI4VLaKyMbzqy1Xk/RhFx1+GOUPw==','MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvF3DJKWR68reMAZUTvA+sJjwVDLidHc4pSLuNiSFSPi7qFkKamN/q+66ru8QHb0kmbWQGvP5Ap2tUSO8xEjfNJvrgZRowGIUbod0r3VgD7U/Bt/TjxCMJxDFJJhH7Dz9ETs9Ukuz58Zv9y/hYjcUdXrFLyPLKVj60FXbnCoBlbHabrbnG/0hNGMCfWCyYimcoqFoF+F1/ZbsQvk3NdIsLXLYbchbK5TdjGtRSUE0+cnLf8Jm2Ny/SxMhZXn/TblfwX1p03z4aXWuFclIMjDiOLujQ2vwuBzF6trcwRN25JhE2vCrDyyaiRO0+hbane+YPjpJXU9rX4CW/ApH+d28pwIDAQAB',3580000),(15,'DEC20250825-003','2025-08-25 06:23:47','進口','我是進口人',NULL,'我是出口人',NULL,NULL,'退回','TD87W9euZWOzdCtIv2epJqgYkj60LH7omPKIixl0Gda4VLVLSW/LrPpy2hc5aGsASrTAGQwBxqRDN9+vHu89gyT/PpcxnlZuMtJkO1gHQXBzZKSF5Vg9DNf/ULVfJrm3zRg76hD1zgqhp5ViceT/mVkz1JUoE/8KkiiAWoocTWxqFfQ7kauc6xWIaw9O9r0JatiZPOcSfHHx7s5iztnaUi3BB4T1aqe9gw3kJSHKYzOpBxnepkHG0qPI1H/FoFUsK54ZbnBmYJZVgVF6DEq7JtZJAkDIWCn0hmNX4iLghzuE8eJs/2WT5VgW0I3ODsD/z6Rd4aUJVhdmheEkDLBQ5g==','MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvF3DJKWR68reMAZUTvA+sJjwVDLidHc4pSLuNiSFSPi7qFkKamN/q+66ru8QHb0kmbWQGvP5Ap2tUSO8xEjfNJvrgZRowGIUbod0r3VgD7U/Bt/TjxCMJxDFJJhH7Dz9ETs9Ukuz58Zv9y/hYjcUdXrFLyPLKVj60FXbnCoBlbHabrbnG/0hNGMCfWCyYimcoqFoF+F1/ZbsQvk3NdIsLXLYbchbK5TdjGtRSUE0+cnLf8Jm2Ny/SxMhZXn/TblfwX1p03z4aXWuFclIMjDiOLujQ2vwuBzF6trcwRN25JhE2vCrDyyaiRO0+hbane+YPjpJXU9rX4CW/ApH+d28pwIDAQAB',206000);
+/*!40000 ALTER TABLE `declaration` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2025-08-25  7:17:13
